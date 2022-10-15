@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend/app
+    environment:
+      - FLASK_APP=main:app
+    ports:
+      - 8000:5000 # HOST:CONTAINER
