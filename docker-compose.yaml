@@ -7,3 +7,15 @@ services:
       - FLASK_APP=main:app
     ports:
       - 8000:5000 # HOST:CONTAINER
+    networks:
+      - back-tier
+      
+  frontend:
+    build: ./frontend
+    ports:
+      - 3000:3000
+    networks:
+      - back-tier
+    
+networks:
+  back-tier:
